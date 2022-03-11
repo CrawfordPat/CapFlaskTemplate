@@ -1,0 +1,56 @@
+<!-- This is a blank template.  You can copy this to make a new template page. -->
+
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="jumbotron">
+    <h1 class="display-4">ABOUT US PAGE</h1>
+    <p class="lead">We have features and features all for you to look at and waste time on.</p>
+    <hr class="my-4">
+</div>
+
+<div class="container col-lg">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col">
+        <img src="..\static\tom.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Idiot's Guide to Textbook Money</h1>
+        <p class="lead">When I started this project, I wanted to create a place where journalists, reserchers, and <strong>normal people</strong> could easily see how well their local public schools are funded. An emphasis of transperancy was critical to ensuring our mission was accomplished effectively; it's why we made the data open-source and decentralized (i.e wiki-school-funding)</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <center>
+            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" onclick="window.location.href='/'">HOME</button>
+          </center>
+        </div>
+      </div>
+      <div class="col">
+          <img src="..\static\guy.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <figure class="text-center">
+          <blockquote class="blockquote">
+            <p>School funds are the focal point of a decades long struggle to save the public school system for privitization, and the focres the seek to change eliminate one form of education in favor of another.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            Crawford Patten in <cite title="Source Title">The Bible</cite>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <hr>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <p class="lead">
+          How to use this website:
+        </p>
+        <p>
+          Go to the "Map" tab to see each state. Click on a state to see the state's public school funding information. Each state as a detail summary of how much funding is being spent on public schools per student.
+        </p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
