@@ -25,6 +25,8 @@ class RegistrationForm(FlaskForm):
     lname = StringField('Last Name', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo('password')])
+    role = SelectField('Role',choices=[("Teacher","Teacher"),("Student","Student")])
+    jobtype = SelectField('JobType', choices=[("Physical Labor", "Physical Labor"),("Brain Labor","Brain Labor")])
     submit = SubmitField('Register')
 
     def validate_username(self, username):
@@ -58,6 +60,8 @@ class ProfileForm(FlaskForm):
     lname = StringField('Last Name', validators=[DataRequired()]) 
     image = FileField("Image") 
     submit = SubmitField('Post')
+    role = SelectField('Role',choices=[("Teacher","Teacher"),("Student","Student")])
+    jobtype = SelectField('JobType', choices=[("Physical Labor", "Physical Labor"),("Brain Labor","Brain Labor")])
 
 class PostForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])

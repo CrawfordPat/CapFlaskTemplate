@@ -62,7 +62,9 @@ def register():
             username=form.username.data, 
             fname=form.fname.data,
             lname=form.lname.data,
-            email=form.email.data
+            email=form.email.data,
+            role=form.role.data,
+            jobtype=form.jobtype.data
             )
         newUser.save()
         newUser.set_password(form.password.data)
