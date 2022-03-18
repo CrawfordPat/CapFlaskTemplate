@@ -10,6 +10,5 @@ def index():
 def aboutus():
     return render_template('aboutus.html')
 
-@app.route('/posts')
-def posts():
-    return render_template('posts.html')
+# There is no route for the posts page because when I tried that, I didn't show my posts. It took me to /posts.
+# But Grahams code just had "href='/post/list'" and that worked.
