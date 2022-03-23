@@ -19,6 +19,11 @@
     {% endif %}
 
     <h1 class="display-5">{{post.subject}}</h1>
+    {% if post.type == 'IMPORTANT' %}
+        <span style="color: red;">{{post.type}}</span>
+    {% else %}
+        <p>{{post.type}}</p>
+    {% endif %}
     <p class="fs-3 text-break">
         {% if post.author.image %}
             <img width="120" class="img-thumbnail float-start me-2" src="data:image;base64,{{base64encode(post.author.image.read())}}">

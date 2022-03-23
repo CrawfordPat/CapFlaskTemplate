@@ -4,6 +4,7 @@
 # fields have types like IntField, StringField etc.  This uses the Mongoengine Python Library. When 
 # you interact with the data you are creating an onject that is an instance of the class.
 
+from tkinter.tix import Select
 from app import app
 from flask import flash
 from flask_login import UserMixin
@@ -49,6 +50,8 @@ class Post(Document):
     author = ReferenceField('User',reverse_delete_rule=CASCADE) 
     subject = StringField()
     content = StringField()
+    # SelectField(choices=[("normal", "normal"),("IMPORTANT","IMPORTANT")])
+    type = StringField()
     createdate = DateTimeField(default=dt.datetime.utcnow)
     modifydate = DateTimeField()
 

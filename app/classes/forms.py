@@ -65,6 +65,7 @@ class ProfileForm(FlaskForm):
 class PostForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])
     content = TextAreaField('Post', validators=[DataRequired()])
+    type = SelectField('Type', choices=[("normal", "normal"),("IMPORTANT", "IMPORTANT")])
     submit = SubmitField('Post')
 
 class CommentForm(FlaskForm):

@@ -35,6 +35,16 @@
                 {% endif %}
                 {{post.subject}}
             </div>
+            <div class="col">
+                {% if loop.index == 1 %}
+                    <h3 class="display-5">Post Type</h3>
+                {% endif %}
+                {% if post.type == 'IMPORTANT' %}
+                    <span style="color: red;">{{post.type}}</span>
+                {% else %}
+                    {{post.type}}
+                {% endif %}
+            </div>
         </div>
     {% endfor %}
 {% else %}
