@@ -7,3 +7,7 @@ div {
 p {
     font-family: monospace;
 }
+
+p#post_content {
+    border: 5px solid black;
+}

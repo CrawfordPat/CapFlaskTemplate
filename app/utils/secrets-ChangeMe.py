@@ -8,7 +8,7 @@ def getSecrets():
     secrets = {
         'MAIL_PASSWORD':'YourPasswordHere',
         'MAIL_USERNAME':'YourEmailAddressHere',
-        'MONGO_ADMIN': 'J4cam0no',
-        'MONGO_PASSWORD':'fCqAEvS1VLbVgkT',
+        'MONGO_HOST':'mongodb+srv://J4cam0no:fCqAEvS1VLbVgkT@cluster0.e4pnw.mongodb.net/capstone?retryWrites=true&w=majority',
+        'MONGO_DB_NAME':'capstone'
         }
     return secrets
