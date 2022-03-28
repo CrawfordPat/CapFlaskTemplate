@@ -58,9 +58,9 @@ class ProfileForm(FlaskForm):
     fname = StringField('First Name', validators=[DataRequired()])
     lname = StringField('Last Name', validators=[DataRequired()]) 
     image = FileField("Image") 
-    submit = SubmitField('Post')
     role = SelectField('Role',choices=[("Teacher","Teacher"),("Student","Student")])
     jobtype = SelectField('JobType', choices=[("Physical Labor", "Physical Labor"),("Brain Labor","Brain Labor")])
+    submit = SubmitField('Post')
 
 class PostForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])
@@ -71,3 +71,10 @@ class PostForm(FlaskForm):
 class CommentForm(FlaskForm):
     content = TextAreaField('Comment', validators=[DataRequired()])
     submit = SubmitField('Comment')
+
+class StateForm(FlaskForm):
+    stateName = StringField('State Name', validators=[DataRequired()])
+    totalBudget = IntegerField('Total Budget', validators=[DataRequired()])
+    perCapitaBudget = IntegerField('Per Capita Budget', validators=[DataRequired()])
+    budgetGrowth = IntegerField('Budget Growth', validators=[DataRequired()])
+    submit = SubmitField('Update')
