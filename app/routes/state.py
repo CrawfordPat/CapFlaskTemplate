@@ -1,7 +1,7 @@
 from flask.app import Flask
 from app import app
 import datetime as dt
-from flask import flash
+from flask import flash, render_template
 from flask_wtf import FlaskForm
 from mongoengine.fields import EmailField
 import mongoengine.errors
@@ -10,6 +10,11 @@ from wtforms import PasswordField, StringField, SubmitField, TextAreaField, Hidd
 from app.classes.data import User
 from app.classes.data import State
 from app.classes.forms import StateForm
+
+@app.route('/state/list', methods=['GET', 'POST'])
+def state_list():
+    states = State.objects()
+    return render_template('states.html',states=states)
 
 @app.route('/state/new', methods=['GET', 'POST'])
 def new_state():
