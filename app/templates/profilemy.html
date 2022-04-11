@@ -2,7 +2,7 @@
 
 {% block body %}
 <h1 class="display-1">
-    My Profile
+    Who??
     <a href="/myprofile/edit">
         <img width="40" src="/static/edit.png">
     </a>
@@ -22,14 +22,38 @@
             Real Name: {{current_user.fname}}  {{current_user.lname}} <br>
         {% endif %}
         
-        Username: {{current_user.username}} <br>
         Email: {{current_user.email}} <br>
-        Role: {{current_user.role}} <br>
-        Job Type: {{current_user.jobtype}} <br>
+        <p><i>email me ;)</i></p>
+    </div>
+    <hr class="featurette-divider">
+    <div class="container marketing">
+        <br>
+        <h1 style="text-align: center; padding: 30px;"><u>Who is this guy, "Crawford"?</u></h1>
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Who are you? <span class="text-muted">Lemme tell you</span></h2>
+                <p class="lead">
+                    I'm Crawford Patten. I don't like it when dumb people run important stuff.
+                    <br>
+                    <!--
+                    I'm a software engineer. I'm a big fan of the <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img width="40" src="/static/youtube.png"></a>
+                    -->
+                    <br>
+                    Public schools have consistently been under fire for decades.  The central issue: funding. The aim of this website is to help people understand how inconsistent funding has been implemented. The disparty in public school quality between neighborhoods is a big problem. Student of color often attend schools with lower budgets, while White students are often attending schools with budgets that are much more condusive to education.
+                </p>
+                <hr class="featurette-divider">
+                <p>
+                    <strong>What does my app do?</strong>
+                    <br>
+                    My app will have a map of the US. You will be able to hover over each state, and see the average funding for that state, the budget growth, and budget per student. If you click on the state, you will find recources provided by each state with official information and projections.
+                </p>
+            </div>
+            <div class="col-md-5">
+                <img src="./static/tom.jpg" alt="Reeeeeeally strong guy" style="height:390px">
+            </div>
+        </div>
     </div>
 </div>
 <br>
-
-
 
 {% endblock %}

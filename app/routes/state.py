@@ -1,4 +1,6 @@
 from flask.app import Flask
+from app import app
+import datetime as dt
 from flask import flash
 from flask_wtf import FlaskForm
 from mongoengine.fields import EmailField
