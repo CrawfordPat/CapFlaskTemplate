@@ -1,9 +1,11 @@
-.bottom-image img{
-    vertical-align:bottom;
+.bottom-image img {
+    vertical-align: bottom;
 }
+
 div {
     font-family: monospace;
 }
+
 p {
     font-family: monospace;
 }
@@ -11,6 +13,7 @@ p {
 p#post_content {
     border: 5px solid black;
 }
+
 #borderAround {
     padding: 10px !important;
     border: 3px solid black;
