@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-4">
-        <h1 class="display-1">All Posts</h1>
+        <h1 class="display-1">States</h1>
     </div>
     <div class="col">
         <a href="/state/new" class="btn btn-primary btn-sm mt-5" role="button">New Post</a>
@@ -31,9 +31,9 @@
             </div>
             <div class="col">
                 {% if loop.index == 1 %}
-                    <h3 class="display-5">Subject</h3>
+                    <h3 class="display-5">State</h3>
                 {% endif %}
-                {{state.stateID}}
+                {{state.stateName}}
             </div>
             <div class="col">
                 {% if loop.index == 1 %}
