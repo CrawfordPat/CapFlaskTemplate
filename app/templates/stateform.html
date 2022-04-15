@@ -1,0 +1,67 @@
+<!-- this is a generic form page.  Best way to make a new form page is to 
+copy this one and then edit it. -->
+
+{% extends "base.html" %}
+
+{% block body %}
+        <h1>Update State</h1>
+        <br>
+
+        <!--List all errors in a group at the top-->
+        {% for field in state.errors %}
+            {% for error in state.errors[field] %}
+                <div class="alert alert-error">
+                    <strong>Error!</strong>{{field}}: {{error}}
+                </div>
+            {% endfor %}
+        {% endfor %}
+        
+        <h3>States already stored:</h3>
+        <div class="row">
+            {% for stateName in states %}
+                <div class="col-2">
+                    <h3>{{stateName.stateName}}</h3>
+                </div>
+            {% endfor %}
+        </div>
+        <hr>
+        <form method=post id="borderAround">
+            {{ state.hidden_tag() }}
+            <p>
+                {{ state.stateName.label }} <br>
+                {{ state.stateName(size=64) }}
+                <!--List the errors for this field-->
+                {% for error in state.stateName.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ state.totalBudget.label }} <br>
+                {{ state.totalBudget(size=64) }}
+                <!--List the errors for this field-->
+                {% for error in state.totalBudget.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ state.perCapitaBudget.label }} <br>
+                {{ state.perCapitaBudget(size=64) }}
+                <!--List the errors for this field-->
+                {% for error in state.perCapitaBudget.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ state.budgetGrowth.label }} <br>
+                {{ state.budgetGrowth(size=64) }}
+                <!--List the errors for this field-->
+                {% for error in state.budgetGrowth.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            
+
+            {{state.submit()}}
+        </form>
+        
+{% endblock %}
