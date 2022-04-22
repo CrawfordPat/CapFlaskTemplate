@@ -19,9 +19,7 @@
                 <h3 class="display-5">Date</h3>
                 {% endif %}
 
-                <a href="/state/{{state.id}}">
-                    {{moment(state.createdate).calendar()}}
-                </a>
+                {{moment(state.createdate).calendar()}}
             </div>
             <div class="col-2">
                 {% if loop.index == 1 %}
@@ -33,7 +31,9 @@
                 {% if loop.index == 1 %}
                     <h3 class="display-5">State</h3>
                 {% endif %}
-                {{state.stateName}}
+                <a href="/state/{{state.id}}">
+                    {{state.stateName}}
+                </a>
             </div>
             <div class="col">
                 {% if loop.index == 1 %}

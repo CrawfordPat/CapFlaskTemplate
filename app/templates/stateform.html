@@ -29,7 +29,13 @@ copy this one and then edit it. -->
             {{ state.hidden_tag() }}
             <p>
                 {{ state.stateName.label }} <br>
-                {{ state.stateName(size=64) }}
+                <!-- {{ state.stateName(size=64) }} -->
+                <!-- dropdown list of all states-->
+                <select name="stateName" id="stateName">
+                    {% for stateName in states %}
+                        <option value="{{stateName.stateName}}">{{stateName.stateName}}</option>
+                    {% endfor %}
+                </select>
                 <!--List the errors for this field-->
                 {% for error in state.stateName.errors %}
                     <span style="color: red;">[{{ error }}]</span>
