@@ -11,6 +11,60 @@ from app.classes.data import Post, Comment, User, State
 from app.classes.forms import StateForm, CommentForm
 from flask_login import login_required, current_user
 
+# make an array with the names of every state
+stateList = [
+    'Alabama',
+    'Alaska',
+    'Arizona',
+    'Arkansas',
+    'California',
+    'Colorado',
+    'Connecticut',
+    'Delaware',
+    'Florida',
+    'Georgia',
+    'Hawaii',
+    'Idaho',
+    'Illinois',
+    'Indiana',
+    'Iowa',
+    'Kansas',
+    'Kentucky',
+    'Louisiana',
+    'Maine',
+    'Maryland',
+    'Massachusetts',
+    'Michigan',
+    'Minnesota',
+    'Mississippi',
+    'Missouri',
+    'Montana',
+    'Nebraska',
+    'Nevada',
+    'New Hampshire',
+    'New Jersey',
+    'New Mexico',
+    'New York',
+    'North Carolina',
+    'North Dakota',
+    'Ohio',
+    'Oklahoma',
+    'Oregon',
+    'Pennsylvania',
+    'Rhode Island',
+    'South Carolina',
+    'South Dakota',
+    'Tennessee',
+    'Texas',
+    'Utah',
+    'Vermont',
+    'Virginia',
+    'Washington',
+    'West Virginia',
+    'Wisconsin',
+    'Wyoming'
+]
+
 @app.route('/state/list', methods=['GET', 'POST'])
 def state_list():
     states = State.objects()
@@ -35,7 +89,7 @@ def new_state():
         newState.save()
         return redirect(url_for('state',stateID=newState.id))
     
-    return render_template('stateform.html',state=state, states=states)
+    return render_template('stateform.html',state=state, states=states, stateList=stateList)
 
 @app.route('/state/<stateID>')
 # This route will only run if the user is logged in.
@@ -74,8 +128,9 @@ def stateEdit(postID):
             budgetGrowth = form.budgetGrowth.data,
             modifydate = dt.datetime.utcnow
         )
+
         # After updating the document, send the user to the updated post using a redirect.
-        return redirect(url_for('state',postID=postID))
+        return redirect(url_for('state',stateID=postID, state=form, states=stateList, currState=form.stateName.data))
 
     # if the form has NOT been submitted then take the data from the editPost object
     # and place it in the form object so it will be displayed to the user on the template.
@@ -86,7 +141,7 @@ def stateEdit(postID):
 
     # Send the user to the post form that is now filled out with the current information
     # from the form.
-    return render_template('stateform.html',form=form)
+    return render_template('stateform.html',state=form, stateList=stateList, currState=form.stateName.data)
 
 # @app.route('/comment/new/<postID>', methods=['GET', 'POST'])
 # @login_required
