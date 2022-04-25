@@ -23,8 +23,8 @@ copy this one and then edit it. -->
             <h3>States already stored:</h3>
             <div class="row">
                 {% for stateName in states %}
-                    <div class="col-2">
-                        <h3 class="border border-primary rounded">{{stateName.stateName}}</h3>
+                    <div class="col p-1 m-2 border border-3 border-primary rounded">
+                        <h3><a href="/state/{{stateName.id}}">{{stateName.stateName}}</a></h3>
                     </div>
                 {% endfor %}
             </div>
@@ -54,9 +54,24 @@ copy this one and then edit it. -->
                                 <input type="text" name="stateName" id="stateName" value="{{state.stateName.data}}">
                             {% else %}
                                 <select name="stateName" id="stateName">
-                                    {% for name in stateList %}
+                                    <!-- {% for name in stateList %}
                                         <option value="{{name}}">{{name}}</option>
+                                    {% endfor %} -->
+                                    
+                                    <!-- Put all the states not in states into a dropdown-->
+                                    <!--{% for name in stateList %}
+                                        {% if not states.contains(name) %}
+                                            <option value="{{name}}">{{name}}</option>
+                                        {% endif %}
+                                    {% endfor %} -->
+
+                                    <!-- Put all the states not in states into a dropdown-->
+                                    {% for name in stateList %}
+                                        {% if not (name in states) %}
+                                            <option value="{{name}}">{{name}}</option>
+                                        {% endif %}
                                     {% endfor %}
+
                                 </select>
                             {% endif %}
                             <!--List the errors for this field-->
