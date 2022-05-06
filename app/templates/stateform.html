@@ -54,24 +54,12 @@ copy this one and then edit it. -->
                                 <input type="text" name="stateName" id="stateName" value="{{state.stateName.data}}">
                             {% else %}
                                 <select name="stateName" id="stateName">
-                                    <!-- {% for name in stateList %}
-                                        <option value="{{name}}">{{name}}</option>
-                                    {% endfor %} -->
-                                    
-                                    <!-- Put all the states not in states into a dropdown-->
-                                    <!--{% for name in stateList %}
-                                        {% if not states.contains(name) %}
-                                            <option value="{{name}}">{{name}}</option>
-                                        {% endif %}
-                                    {% endfor %} -->
-
-                                    <!-- Put all the states not in states into a dropdown-->
+                                    <!-- Only put the state in the dropdown if it's not had info added-->
                                     {% for name in stateList %}
-                                        {% if not (name in states) %}
+                                        {% if not name in states|map(attribute='stateName')|join(', ') %}
                                             <option value="{{name}}">{{name}}</option>
                                         {% endif %}
                                     {% endfor %}
-
                                 </select>
                             {% endif %}
                             <!--List the errors for this field-->

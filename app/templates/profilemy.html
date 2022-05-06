@@ -21,9 +21,11 @@
         {% if current_user.fname and current_user.lname %}
             Real Name: {{current_user.fname}}  {{current_user.lname}} <br>
         {% endif %}
-        <p>Burner Name: Jan Engström</p>
-        Email: {{current_user.email}} <br>
-        <p><i>email me ;)</i></p>
+        {% if current_user.username == "crawfordP" %}
+            <p>Burner Name: Jan Engström</p>
+            Email: {{current_user.email}} <br>
+            <p><i>email me ;)</i></p>
+        {% endif %}
     </div>
     <hr class="featurette-divider">
     <div class="container marketing">
